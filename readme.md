@@ -26,7 +26,7 @@
 - [Hash Tables / Dictionaries / Objects](#hash-tables)
 - [Destructuring](#destructuring)
 - [Spread Operator](#spread-operator)
-- [Rest parameters](#rest-parameters)
+- [Rest parameters/*args/*kwargs](#rest-parameters)
 - [Class](#class)
 - [Importing Libraries](#importing-libraries)
 - [Type Conversions](#type-conversions)
@@ -1816,22 +1816,23 @@ myFunction.apply(null, arr); // using the apply() method
 myFunction(...arr); // spread method
 
 // join multiple arrays together
-let arr1 = [a, b, c];
-let arr2 = [d, e, f];
+let arr1 = ['a', 'b', 'c'];
+let arr2 = [1, 2, 3];
 let totalArr = arr1.concat(arr2); // concat method
-let totalArr = [...arr1, ...arr2];
+let totalArr = [...arr1, ...arr2];  // ['a', 'b', 'c', 1, 2, 3]
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Rest parameters
 
 ### python 3
 
 ```python
 # *args
-# Receive a couple of single values and transform them into an array
+# Receive a couple of single values and transform them into tuple
 def myFunction(*args):
-    newArr = args  # args is an array of arugments
+    newArr = args  # args is tuple of arugments
 
 # **kwargs
 # Receive a couple of keys and values and transform them into a dictionary
@@ -1851,6 +1852,7 @@ function myFunction(...args) {
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Class
 
 ### python 2
@@ -2139,6 +2141,7 @@ console.log(dev.pay); // 5500
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Importing Libraries
 
 ### python 3
@@ -2149,6 +2152,7 @@ import module_name  # must call module_name to use
 
 # Using alias
 import module_name as mn  # must call mn to use
+import pandas as pd
 
 # import class or function from a module
 from module_name import function_name
@@ -2209,6 +2213,7 @@ import name, { function1 } from "/modules/path/moduleName"; // function1 can be 
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Type Conversions
 
 ### python 3
@@ -2261,13 +2266,14 @@ num = parseFloat(str) // 12.5
 //string to integer or float (return NaN if non number in string)
 str = "12"
 num = Number(str) // 12
-str = 12.5";
+str = "12.5";
 num = Number(str) // 12.5
 str = "12.5 kg";
 num = Number(str); // NaN
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Find Data Type
 
 ### python 3
@@ -2328,27 +2334,13 @@ Number.isNaN(variable1); // true
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## String Concatenation
-
-### python 2
-
-```python
-string_name = "string1" + "string2"  # "string1string2"
-
-# String formatting
-# % string operator: old style, soon to be deprecated
-string_name = "%s %s" % ("string1", "string2")  # "string1 string2"
-
-# {} operator: python 2.6 and above
-# method 1
-string_name = "{} {}".format("string1", "string2")  # "string1 string2"
-# method 2
-string_name = "{0} {1}".format("string1", "string2")  # "string1 string2"
-```
 
 ### python 3
 
 ```python
+string_name = "string1" + "string2"  # "string1string2"
 # f string: python 3.6 and above
 string1 = "string1"
 string2 = "string2"
@@ -2387,23 +2379,8 @@ let string2 = "string 2 value";
 let stringName = `${string1} ${string2} 123`; // "string 1 value string 2 value 123"
 ```
 
-### ruby
-
-```ruby
-string1 = "string1"
-string2 = "string2"
-string_name = "#{string1} #{string2}"  # "string1 string2"
-
-string_name << "string 3"  # "string1 string2string3"
-
-# to_s: numbers need to be converted to a string to be concatenated
-puts "one" + 1.to_s  # "one1"
-
-# %s for strings, %d for integers, %f for floats, %.3f for float with 3 decimals
-printf "%s %s", "string1", "string2"  # "string1 string2"
-```
-
 [back to top](#table-of-contents) ⬆️
+
 ## JSON
 
 ### python 3
@@ -2433,12 +2410,13 @@ objName = JSON.parse(objName);
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Program Entry Point
 
 ### python 3
 
 ```python
-if __name__ === "__main__":
+if __name__ == "__main__":
     # do something
 ```
 
@@ -2452,6 +2430,7 @@ if (require.main === module) {
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Swapping values
 
 ### python 3
@@ -2484,6 +2463,7 @@ b = temp;
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Error Handling
 
 ### python 3
