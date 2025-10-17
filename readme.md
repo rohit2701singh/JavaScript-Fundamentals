@@ -35,18 +35,19 @@
 - [JSON](#json)
 - [Program Entry Point](#program-entry-point)
 - [Swapping values](#swapping-values)
-- [Error Handling](#error-handling)
+- [Error Handling (Raise an error)](#error-handling)
 - [Custom Error](#custom-error)
 - [Asynchronous](#asynchronous)
 - [Math](#math)
 - [Date and Time](#date-and-time)
 - [Access modifier](#access-modifier)
-- [File System](#file-system)
+- [File System / Open-Read-Write](#file-system)
 - [Iterators](#iterators)
 - [Generators](#generators)
 - [Fetching Web Data](#fetching-web-data)
 - [Enum](#enum)
 - [Language Specific](#language-specific)
+- [Read More Links](#read-more)
 
 
 ## Hello World
@@ -2468,21 +2469,23 @@ b = temp;
 
 ### python 3
 
-- try: lets you test a block of code for errors
-- except: except block lets you handle the error
+- **try**: lets you test a block of code for errors
+  
+- **except**: except block lets you handle the error
   - covers all error types
     > except:
   - define exception type (can write multiple except statements)
     > except NameError:
   - save error to variable e
     > except ValueError as e:
-  - list of important error types
+  - list of important error types:
     - AssertionError, AttributeError, EOFError, FloatingPointError, GeneratorExit, ImportError, IndexError, KeyError
     - KeyboardInterrupt, MemoryError, NameError, NotImplementedError, OSError, OverflowError, ReferenceError, RuntimeError
     - StopIteration, SyntaxError, IndentationError, TabError, SystemError, TypeError, UnboundLocalError, UnicodeError
     - UnicodeEncodeError, UnicodeDecodeError, UnicodeTranslateError, ValueError, ZeroDivisionError
-- else: code to be executed if no errors were raised
-- finally: if specified, will be executed regardless if the try block raises an error or not
+- **else**:  executed only if no exception occurs within the **try** block. This is useful for code that should only run if the try block completes successfully. 
+
+- **finally**: if specified, will be executed regardless if the try block raises an error or not
   - useful to close objects and clean up resources
 
 ```python
@@ -2499,9 +2502,9 @@ finally:  # not required
 
 ### javascript
 
-- try: lets you test a block of code for errors
-- catch: lets you handle the error
-- finally: lets you execute code, after try and catch, regardless of the result
+- **try:** lets you test a block of code for errors
+- **catch:** lets you handle the error
+- **finally:** lets you execute code, after try and catch, regardless of the result
 
 ```javascript
 try {
@@ -2514,6 +2517,7 @@ try {
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Custom Error
 
 ### python 3
@@ -2535,6 +2539,7 @@ throw 123; // throw a number
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Asynchronous
 
 - Handling asynchronous code (making it synchronous)
@@ -2672,6 +2677,7 @@ await run();
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Math
 
 ### python 3
@@ -2712,6 +2718,8 @@ math.inf
 import random
 # random integer
 random.randint(1, 3)  # any number from 1 to 3
+# random choice
+random.choice([1, 2, "a", "b", "hello", "world"])
 ```
 
 ### javascript
@@ -2729,14 +2737,12 @@ Math.floor(Math.random() * 10);
 // random integer from 0 to 10
 Math.floor(Math.random() * 11);
 
-// random integer from 0 to 10
-Math.floor(Math.random() * 11);
-
 // random integer from 1 to 10
 Math.floor(Math.random() * 10) + 1;
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Date and Time
 
 ### python3
@@ -2750,8 +2756,7 @@ today = date.today()
 print("Today's date is ", today)  # Today's date is  2021-07-16
 
 # print out the date's individual components
-print("Date components: ", today.day, today.month,
-      today.year)  # Date components:  16 7 2021
+print("Date components: ", today.day, today.month, today.year)  # Date components:  16 7 2021
 
 # retrieve today's weekday (0=Monday, 6=Sunday)
 print("Today's weekday # is: ", today.weekday())  # Today's weekday # is:  4
@@ -2764,7 +2769,9 @@ print("The current date and time is ", today)  # The current date and time is  2
 t = datetime.time(datetime.now())
 print(t)  # 18:34:40.676073
 
+
 # Times and dates can be formatted using a set of predefined string control codes
+
 now = datetime.now()
 # Date formatting
 # %y/%Y - year, %a/%A - weekday, %b/%B - month, %d - day of month
@@ -2852,6 +2859,7 @@ for m in range(1, 13):
 ### javascript
 
 [back to top](#table-of-contents) ⬆️
+
 ## File System
 
 ### python
@@ -2953,6 +2961,7 @@ if path.exists("textfile"):
 ### javascript
 
 [back to top](#table-of-contents) ⬆️
+
 ## Access modifier
 
 - use to hide the implementation details of a class
@@ -2963,6 +2972,7 @@ if path.exists("textfile"):
 
 
 [back to top](#table-of-contents) ⬆️
+
 ## Iterators
 
 ### python
@@ -2980,6 +2990,7 @@ iterator.next(); // { value: undefined, done: true }
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Generators
 
 ### python
@@ -3094,6 +3105,7 @@ iterator5.next(); // { value: undefined, done: true }
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Fetching Web Data
 
 ### python
@@ -3174,6 +3186,7 @@ for skill in skills:
 ### Javascript
 
 [back to top](#table-of-contents) ⬆️
+
 ## Enum
 
 ### python 3
@@ -3214,6 +3227,7 @@ const color = {
 ```
 
 [back to top](#table-of-contents) ⬆️
+
 ## Language Specific
 
 ### python
@@ -3317,7 +3331,7 @@ ord("a")  # 97
 chr(97)  # a
 ```
 
-- function annotatins
+- **function annotatins**
 - `int`, `float`, `bool`, `str`, `bytes`, `None`
 - python 3.8 & earlier, `list`, `set`, `dict`, `tuple`
   - `list[int]`, `dict[float, str]`, `Tuple[int, ...]`
@@ -3597,4 +3611,19 @@ console.log(proxy.nextId); // 1  (field name must be the same as when doing the 
 console.log(proxy.nextId); // 2
 console.log(proxy.nextId); // 3
 ```
+[back to top](#table-of-contents) ⬆️
+
+## Read More
+
+- [https://www.theyurig.com/blog/javascript-python-syntax#top](https://www.theyurig.com/blog/javascript-python-syntax)
+  
+- [https://medium.com/geekculture/javascript-vs-python-syntax-cheatsheet-9bc7c59599c6](https://medium.com/geekculture/javascript-vs-python-syntax-cheatsheet-9bc7c59599c6)
+
+- [https://www.hleroy.com/2022/10/my-cheat-sheet-python-vs-javascript/](https://www.hleroy.com/2022/10/my-cheat-sheet-python-vs-javascript/)
+  
+- [https://github.com/reshinto/programming_language_syntax_comparison](https://github.com/reshinto/programming_language_syntax_comparison)
+  
+- [https://gist.github.com/logicbomb421/ee998281236686a98ee254e14b713d9d](https://gist.github.com/logicbomb421/ee998281236686a98ee254e14b713d9d)
+
+
 [back to top](#table-of-contents) ⬆️
